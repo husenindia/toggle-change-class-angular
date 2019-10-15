@@ -1,0 +1,39 @@
+<div ng-app='app' class="filters_ct" ng-controller="selectFilter">
+    <ul>
+        <li ng-click="select(1)"
+        ng-class="{sel: 1 == selected} ">
+            Record 1
+        </li>
+        <li ng-click="select(2)"
+        ng-class="{sel: 2 == selected} ">
+            Record 2
+        </li>
+        <li ng-click="select(3)"
+        ng-class="{sel: 3 == selected} ">
+            Record 3
+        </li>
+        <li ng-click="select(4)"
+        ng-class="{sel: 4 == selected} ">
+            Record 4
+        </li>
+        <li ng-click="select(5)"
+        ng-class="{sel: 5 == selected} ">
+            Record 5
+        </li>
+    </ul>
+</div>
+
+<script>
+var app = angular.module('app', []); 
+app.controller('selectFilter', function($scope) {
+
+    $scope.selected = false;
+    $scope.select= function(index) {
+       if($scope.selected == index){
+         $scope.selected = false; 
+       }else{
+         $scope.selected = index; 
+       }
+    };
+});
+<script>
